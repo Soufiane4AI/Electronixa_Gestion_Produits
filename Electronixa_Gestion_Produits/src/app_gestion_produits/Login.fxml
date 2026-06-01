@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane prefHeight="480.0" prefWidth="780.0"
+            style="-fx-background-color: #1a2639;"
+            xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="app_gestion_produits.LoginController">
+    <children>
+
+        <!-- PANNEAU GAUCHE -->
+        <VBox layoutX="0.0" layoutY="0.0"
+              prefWidth="360.0" prefHeight="480.0"
+              alignment="CENTER" spacing="16.0"
+              style="-fx-background-color: #1a2639;
+                     -fx-padding: 50 40 50 40;">
+            <children>
+
+                <!-- Icône / Logo -->
+            <Label text="🖥"
+                   style="-fx-font-size: 64px;
+                          -fx-text-fill: white;" />
+                <!-- Nom société -->
+                <Label text="Electronixa"
+                       style="-fx-font-size: 30px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: white;" />
+
+                <!-- Sous-titre -->
+                <Label text="Système de Gestion des Produits"
+                       wrapText="true"
+                       textAlignment="CENTER"
+                       style="-fx-font-size: 13px;
+                              -fx-text-fill: #a0aec0;
+                              -fx-text-alignment: center;" />
+
+                <!-- Séparateur décoratif -->
+                <Region prefHeight="2.0" prefWidth="60.0"
+                        style="-fx-background-color: #3d84c6;
+                               -fx-background-radius: 2;" />
+
+                <!-- Message d'accueil -->
+                <Label text="Bienvenue. Connectez-vous pour accéder à votre espace de gestion."
+                       wrapText="true"
+                       textAlignment="CENTER"
+                       style="-fx-font-size: 12px;
+                              -fx-text-fill: #718096;
+                              -fx-text-alignment: center;" />
+
+            </children>
+        </VBox>
+
+        <!-- SÉPARATEUR VERTICAL -->
+        <Separator orientation="VERTICAL"
+                   layoutX="360.0" layoutY="40.0"
+                   prefHeight="400.0"
+                   style="-fx-background-color: #2d3748;" />
+
+        <!-- PANNEAU DROIT -->
+        <VBox layoutX="380.0" layoutY="0.0"
+              prefWidth="400.0" prefHeight="480.0"
+              alignment="CENTER" spacing="14.0"
+              style="-fx-padding: 50 44 50 44;">
+            <children>
+
+                <!-- Titre -->
+                <Label text="Connexion"
+                       style="-fx-font-size: 26px;
+                              -fx-font-weight: bold;
+                              -fx-text-fill: white;" />
+
+                <Label text="Entrez vos identifiants pour continuer"
+                       style="-fx-font-size: 12px;
+                              -fx-text-fill: #718096;" />
+
+                <Region prefHeight="10.0" />
+
+                <!-- Champ Nom d'utilisateur -->
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Nom d'utilisateur"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #a0aec0;
+                                      -fx-font-weight: bold;" />
+                        <TextField fx:id="txtUsername"
+                                   promptText="••••••••"
+                                   style="-fx-background-color: #2d3748;
+                                          -fx-text-fill: white;
+                                          -fx-prompt-text-fill: #4a5568;
+                                          -fx-background-radius: 8;
+                                          -fx-border-color: #3d4a5c;
+                                          -fx-border-radius: 8;
+                                          -fx-padding: 10 14 10 14;
+                                          -fx-font-size: 13px;" />
+                    </children>
+                </VBox>
+
+                <!-- Champ Mot de passe -->
+                <VBox spacing="5.0">
+                    <children>
+                        <Label text="Mot de passe"
+                               style="-fx-font-size: 12px;
+                                      -fx-text-fill: #a0aec0;
+                                      -fx-font-weight: bold;" />
+                        <PasswordField fx:id="txtPassword"
+                                       promptText="••••••••"
+                                       style="-fx-background-color: #2d3748;
+                                              -fx-text-fill: white;
+                                              -fx-prompt-text-fill: #4a5568;
+                                              -fx-background-radius: 8;
+                                              -fx-border-color: #3d4a5c;
+                                              -fx-border-radius: 8;
+                                              -fx-padding: 10 14 10 14;
+                                              -fx-font-size: 13px;" />
+                    </children>
+                </VBox>
+
+                <!-- Message d'erreur -->
+                <Label fx:id="lblErreur"
+                       text=""
+                       wrapText="true"
+                       style="-fx-text-fill: #fc8181;
+                              -fx-font-size: 12px;
+                              -fx-background-color: rgba(252,129,129,0.1);
+                              -fx-background-radius: 6;
+                              -fx-padding: 6 10 6 10;"
+                       visible="false"
+                       managed="false" />
+
+                <Region prefHeight="4.0" />
+
+                <!-- Bouton Se connecter -->
+                <Button fx:id="btnLogin"
+                        onAction="#handleLogin"
+                        mnemonicParsing="false"
+                        prefWidth="312.0"
+                        prefHeight="42.0"
+                        text="Se connecter"
+                        style="-fx-background-color: #3d84c6;
+                               -fx-text-fill: white;
+                               -fx-font-weight: bold;
+                               -fx-font-size: 14px;
+                               -fx-background-radius: 8;
+                               -fx-cursor: hand;" />
+
+                <!-- Bouton Annuler -->
+                <Button fx:id="btnAnnuler"
+                        onAction="#handleAnnuler"
+                        mnemonicParsing="false"
+                        prefWidth="312.0"
+                        prefHeight="36.0"
+                        text="Annuler"
+                        style="-fx-background-color: transparent;
+                               -fx-text-fill: #718096;
+                               -fx-border-color: #2d3748;
+                               -fx-border-radius: 8;
+                               -fx-background-radius: 8;
+                               -fx-font-size: 12px;
+                               -fx-cursor: hand;" />
+
+                <Region prefHeight="10.0" />
+
+
+            </children>
+        </VBox>
+
+    </children>
+</AnchorPane>
